@@ -61,6 +61,13 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     grid-area: info;
     padding: var(--page-padding);
     max-inline-size: var(--max-inline-content);
+
+    & h1 {
+      margin-block-end: -0.3em;
+      font-weight: 700;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
   }
 
   .Links {
@@ -74,8 +81,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      border-block-start: 1px solid var(--color-fg);
+      border-block-start: 1px solid var(--color-bg);
+      background-color: var(--color-fg);
       padding: var(--page-padding);
+      color: var(--color-bg);
       font-weight: 700;
       font-size: 5rem;
       line-height: 0.9;
@@ -92,8 +101,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       }
 
       &:hover {
-        background-color: var(--color-fg);
-        color: var(--color-bg);
+        background-color: var(--color-hl);
       }
     }
   }

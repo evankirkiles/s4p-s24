@@ -3,7 +3,16 @@
 ---
 
 <footer class="Footer">
-  <p>By Evan Kirkiles</p>
+  <div>
+    <p>By Evan Kirkiles</p>
+    <p>
+      <a
+        href="https://2024.software-for-people.net"
+        target="_blank"
+        rel="noopener noreferrer">Software for People</a
+      >
+    </p>
+  </div>
 </footer>
 
 <style lang="scss" is:global>
@@ -11,7 +20,18 @@
     border-block-start: 1px solid currentColor;
     background-color: var(--color-bg);
     padding: var(--page-padding);
-    inline-size: 100%;
-    text-align: center;
+
+    & a {
+      text-decoration: underline;
+    }
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+      margin-inline: auto;
+      padding-inline: var(--page-padding);
+      inline-size: 100%;
+      max-inline-size: var(--max-inline-content);
+    }
   }
 </style>

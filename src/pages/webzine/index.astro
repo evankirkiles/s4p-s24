@@ -12,6 +12,7 @@ const webzineEntries = await getCollection("webzine");
   <title slot="head">P1: Webzine</title>
   <ArticleLayout>
     <div class="Home_contents">
+      <a class="Home_back" href="/">&larr; Back Home</a>
       <Image src={myImg} alt="A group of people sitting around a fire." />
       <h1>Oral Tradition</h1>
       <p>
@@ -36,7 +37,7 @@ const webzineEntries = await getCollection("webzine");
       {
         webzineEntries.map((entry) => (
           <li>
-            <a href={`webzine/${entry.slug}`}>{entry.data.title}</a>
+            <a href={`/webzine/${entry.slug}`}>{entry.data.title}</a>
           </li>
         ))
       }
@@ -44,32 +45,42 @@ const webzineEntries = await getCollection("webzine");
   </ArticleLayout>
 
   <style lang="scss" is:global>
-    .Home_contents {
-      & h1 {
-        margin-block: 0.1em 0.1em;
-        font-weight: 700;
-        font-size: 6rem;
-        line-height: 0.85;
-        letter-spacing: -0.01em;
-        text-transform: uppercase;
+    .Home {
+      &_back {
+        display: block;
+        margin: calc(-1 * var(--page-padding));
+        margin-block-end: 0;
+        border-block-end: 1px solid currentColor;
+        padding: calc(0.5 * var(--page-padding)) var(--page-padding);
       }
 
-      & img {
-        mix-blend-mode: darken;
-        margin: calc(-1 * var(--page-padding));
-        margin-block-end: 0.5em;
-        border-block-end: 1px solid currentColor;
-        inline-size: calc(100% + 2 * var(--page-padding));
-        max-inline-size: unset;
+      &_contents {
+        & h1 {
+          margin-block: 0.1em 0.1em;
+          font-weight: 700;
+          font-size: 6rem;
+          line-height: 0.85;
+          letter-spacing: -0.01em;
+          text-transform: uppercase;
+        }
+
+        & img {
+          mix-blend-mode: darken;
+          margin-inline: calc(-1 * var(--page-padding));
+          border-block-end: 1px solid currentColor;
+          inline-size: calc(100% + 2 * var(--page-padding));
+          max-inline-size: unset;
+        }
       }
-    }
-    .Home_list {
-      flex: 1;
-      margin-block-start: 1rem;
-      font-weight: 700;
-      font-size: 3rem;
-      line-height: 1;
-      text-transform: uppercase;
+
+      &_list {
+        flex: 1;
+        margin-block-start: 1rem;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 1;
+        text-transform: uppercase;
+      }
     }
   </style>
 </RootLayout>

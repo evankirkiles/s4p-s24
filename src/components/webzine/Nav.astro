@@ -7,7 +7,7 @@ const webzineEntries = await getCollection("webzine");
 <nav class="Nav" aria-label="Main">
   <ul>
     <li>
-      <a href="/webzine">[Entry]</a>
+      <a href="/webzine" aria-label="Webzine Landing Page">[⌂]</a>
     </li>
     {
       webzineEntries.map((entry, i) => (
@@ -30,6 +30,7 @@ const webzineEntries = await getCollection("webzine");
     background-color: var(--color-bg);
     padding: calc(0.5 * var(--page-padding)) var(--page-padding);
     max-inline-size: 100vw;
+    font-weight: 700;
     text-align: center;
 
     & ul {
