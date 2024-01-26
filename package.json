@@ -2,6 +2,10 @@
   "name": "s4p-s24",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
