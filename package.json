@@ -13,5 +13,21 @@
     "@astrojs/check": "^0.4.1",
     "astro": "^4.2.4",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.3",
+    "eslint-plugin-astro": "^0.31.3",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.12.3",
+    "prettier-plugin-astro-organize-imports": "^0.3.3",
+    "prettier-plugin-css-order": "^2.0.1",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "sass": "^1.70.0"
   }
 }

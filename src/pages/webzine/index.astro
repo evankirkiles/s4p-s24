@@ -1,0 +1,75 @@
+---
+import myImg from "@/assets/img/Design.png";
+import ArticleLayout from "@/layouts/webzine/ArticleLayout.astro";
+import RootLayout from "@/layouts/webzine/RootLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const webzineEntries = await getCollection("webzine");
+---
+
+<RootLayout disableBlurAndInstructions>
+  <title slot="head">P1: Webzine</title>
+  <ArticleLayout>
+    <div class="Home_contents">
+      <Image src={myImg} alt="A group of people sitting around a fire." />
+      <h1>Oral Tradition</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Fermentum leo vel
+        orci porta non pulvinar neque laoreet suspendisse. Vestibulum lorem sed
+        risus ultricies tristique nulla aliquet enim tortor. Tincidunt nunc
+        pulvinar sapien et ligula ullamcorper malesuada. Neque sodales ut etiam
+        sit amet nisl purus in mollis. Quisque egestas diam in arcu cursus.
+        Fames ac turpis egestas sed tempus urna. Pharetra pharetra massa massa
+        ultricies mi quis hendrerit dolor. Sit amet nulla facilisi morbi tempus
+        iaculis urna.
+      </p><p>
+        Turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet. Libero id
+        faucibus nisl tincidunt eget. Felis eget velit aliquet sagittis. Posuere
+        urna nec tincidunt praesent. Nec dui nunc mattis enim ut. Tristique
+        risus nec feugiat in fermentum posuere urna. Et tortor consequat id
+        porta. Nam at lectus urna duis convallis.
+      </p>
+    </div>
+    <ul class="Home_list">
+      {
+        webzineEntries.map((entry) => (
+          <li>
+            <a href={`webzine/${entry.slug}`}>{entry.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </ArticleLayout>
+
+  <style lang="scss" is:global>
+    .Home_contents {
+      & h1 {
+        margin-block: 0.1em 0.1em;
+        font-weight: 700;
+        font-size: 6rem;
+        line-height: 0.85;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+
+      & img {
+        mix-blend-mode: darken;
+        margin: calc(-1 * var(--page-padding));
+        margin-block-end: 0.5em;
+        border-block-end: 1px solid currentColor;
+        inline-size: calc(100% + 2 * var(--page-padding));
+        max-inline-size: unset;
+      }
+    }
+    .Home_list {
+      flex: 1;
+      margin-block-start: 1rem;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  </style>
+</RootLayout>

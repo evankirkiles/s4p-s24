@@ -1,0 +1,32 @@
+@use "@/styles/global/reset";
+@use "@/styles/global/variables";
+@use "@/styles/global/type";
+
+html,
+body {
+  inline-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  min-block-size: 100svh;
+  overflow-x: clip;
+  color: var(--color-fg);
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background-color: var(--color-fg);
+  color: var(--color-bg);
+}
+
+a:hover,
+button:hover {
+  color: var(--color-hl);
+}

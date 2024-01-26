@@ -1,0 +1,71 @@
+---
+
+---
+
+<section class="Instructions" aria-label="Instructions" id="instructions">
+  <a href="/webzine" class="Instructions_return">BACK TO INDEX</a>
+  <p>⏿ ⏿         ⏿ ⏿</p>
+  <p><kbd>CMD+F5</kbd>: ON/OFF</p>
+  <p><kbd>CAPS+U</kbd>: NAVIGATE</p>
+  <p>MOVE←↑↓→MOVE</p>
+  <p><kbd>CAPS+A</kbd>: READ</p>
+  <p>
+    <a
+      href="https://www.apple.com/voiceover/info/guide/_1121.html"
+      target="_blank"
+      rel="noopener noreferrer">VOICEOVER</a
+    >
+  </p>
+  <p>
+    <a
+      href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+      target="_blank"
+      rel="noopener noreferrer">WCAG</a
+    >
+  </p>
+  <p>⏿</p>
+  <a
+    class="Instructions_more"
+    href="https://support.apple.com/guide/voiceover/general-commands-cpvokys01/mac"
+    target="_blank"
+    rel="noopener noreferrer">MORE CONTROLS</a
+  >
+</section>
+
+<style lang="scss" is:global>
+  .Instructions {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9999;
+    inset: 0;
+    overflow: scroll;
+    font-weight: 700;
+    font-size: clamp(0px, 10vh, 10vw);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em;
+    text-underline-offset: 0.1em;
+
+    &_more,
+    &_return {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-block: 1em;
+      inline-size: 100%;
+      font-size: 1rem;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    &_return {
+      top: 0;
+      bottom: unset;
+      padding-block: 0.75em;
+    }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import ArticleLayout from "@/layouts/webzine/ArticleLayout.astro";
+import RootLayout from "@/layouts/webzine/RootLayout.astro";
+import { getCollection } from "astro:content";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const webzineEntries = await getCollection("webzine");
+  return webzineEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<RootLayout>
+  <title slot="head">❦ {entry.data.title.toUpperCase()} ❦</title>
+  <ArticleLayout>
+    <Content />
+  </ArticleLayout>
+</RootLayout>

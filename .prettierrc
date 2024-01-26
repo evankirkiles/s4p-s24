@@ -1,0 +1,18 @@
+{
+  "semi": true,
+  "printWidth": 80,
+  "singleQuote": false,
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-css-order",
+    "prettier-plugin-astro-organize-imports"
+  ],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}

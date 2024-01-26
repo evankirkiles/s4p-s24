@@ -1,16 +1,100 @@
 ---
-
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <title slot="head">EVAN KIRKILES</title>
+  <main>
+    <article class="PageBody TypeRoot">
+      <div class="Info">
+        <hgroup>
+          <h1>Evan Kirkiles</h1>
+          <p>Software for People, 2024</p>
+        </hgroup>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum
+          leo vel orci porta non pulvinar neque laoreet suspendisse. Vestibulum
+          lorem sed risus ultricies tristique nulla aliquet enim tortor.
+          Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Neque
+          sodales ut etiam sit amet nisl purus in mollis. Quisque egestas diam
+          in arcu cursus. Fames ac turpis egestas sed tempus urna. Pharetra
+          pharetra massa massa ultricies mi quis hendrerit dolor. Sit amet nulla
+          facilisi morbi tempus iaculis urna.
+        </p>
+      </div>
+      <section class="Links">
+        <h2>Projects</h2>
+        <ol>
+          <li>
+            <a href="/webzine">1. Webzine</a>
+          </li>
+          <li>
+            <a href="/webzine" aria-disabled="true">2. Project 2</a>
+          </li>
+          <li>
+            <a href="/webzine" aria-disabled="true">3. Symposium</a>
+          </li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</BaseLayout>
+
+<style lang="scss" is:global>
+  :root {
+    --color-bg: #ffffff;
+  }
+
+  main {
+    display: contents;
+  }
+
+  article {
+    display: grid;
+    grid-template: "info" auto "." 1fr "links" auto / 1fr;
+    flex: 1;
+    block-size: 100%;
+  }
+
+  .Info {
+    grid-area: info;
+    padding: var(--page-padding);
+    max-inline-size: var(--max-inline-content);
+  }
+
+  .Links {
+    grid-area: links;
+
+    & h2 {
+      padding: calc(0.5 * var(--page-padding)) var(--page-padding);
+    }
+
+    & a {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-block-start: 1px solid var(--color-fg);
+      padding: var(--page-padding);
+      font-weight: 700;
+      font-size: 5rem;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+
+      &[aria-disabled="true"] {
+        pointer-events: none;
+        color: var(--color-muted);
+      }
+
+      &::after {
+        content: "→";
+      }
+
+      &:hover {
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+      }
+    }
+  }
+</style>

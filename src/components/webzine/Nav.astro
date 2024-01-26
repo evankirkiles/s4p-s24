@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+
+const webzineEntries = await getCollection("webzine");
+---
+
+<nav class="Nav" aria-label="Main">
+  <ul>
+    <li>
+      <a href="/webzine">[Entry]</a>
+    </li>
+    {
+      webzineEntries.map((entry, i) => (
+        <li>
+          <a href={`/webzine/${entry.slug}`} aria-label={entry.data.title}>
+            [{i + 1}]
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style lang="scss" is:global>
+  .Nav {
+    position: sticky;
+    z-index: 1;
+    inset: 0;
+    border-block-end: 1px solid currentColor;
+    background-color: var(--color-bg);
+    padding: calc(0.5 * var(--page-padding)) var(--page-padding);
+    max-inline-size: 100vw;
+    text-align: center;
+
+    & ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+      overflow-x: clip;
+    }
+  }
+</style>
