@@ -1,5 +1,11 @@
 ---
 import "@/styles/globals.scss";
+
+interface Props {
+  themeColor?: string;
+}
+
+const { themeColor } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,7 +20,7 @@ import "@/styles/globals.scss";
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000" />
     <meta name="msapplication-TileColor" content="#b91d47" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content={themeColor || "#ffffff"} />
     <slot name="head" />
   </head>
   <body>
