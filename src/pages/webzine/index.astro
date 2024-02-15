@@ -1,6 +1,5 @@
 ---
-import myImg from "@/assets/img/Design.png";
-import ArticleLayout from "@/layouts/webzine/ArticleLayout.astro";
+import Design2 from "@/assets/img/Design2.jpg";
 import RootLayout from "@/layouts/webzine/RootLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
@@ -10,11 +9,11 @@ const webzineEntries = await getCollection("webzine");
 
 <RootLayout disableBlurAndInstructions>
   <title slot="head">P1: Webzine</title>
-  <ArticleLayout>
+  <article class="Home">
     <div class="Home_contents">
       <a class="Home_back" href="/">&larr; Back Home</a>
-      <Image src={myImg} alt="A group of people sitting around a fire." />
-      <h1>Oral Tradition</h1>
+      <Image src={Design2} alt="An interview of " />
+      <h1>THE IMPORTANCE OF SPOKEN WEB</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Fermentum leo vel
@@ -41,46 +40,99 @@ const webzineEntries = await getCollection("webzine");
           </li>
         ))
       }
+      {
+        webzineEntries.map((entry) => (
+          <li>
+            <a href={`/webzine/${entry.slug}`}>{entry.data.title}</a>
+          </li>
+        ))
+      }
     </ul>
-  </ArticleLayout>
+  </article>
+</RootLayout>
 
-  <style lang="scss" is:global>
-    .Home {
-      &_back {
-        display: block;
-        margin: calc(-1 * var(--page-padding));
-        margin-block-end: 0;
-        border-block-end: 1px solid currentColor;
-        padding: calc(0.5 * var(--page-padding)) var(--page-padding);
-      }
+<script></script>
 
-      &_contents {
-        & h1 {
-          margin-block: 0.1em 0.1em;
-          font-weight: 700;
-          font-size: 6rem;
-          line-height: 0.85;
-          letter-spacing: -0.01em;
-          text-transform: uppercase;
-        }
+<style lang="scss" is:global>
+  .Home {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(100vw, calc(0.75 * var(--max-inline-content) - 2px)), 1fr)
+    );
+    flex: 1;
+    gap: 4px;
+    // filter: blur(10px);
+    transition: filter 0.1s ease-in-out;
+    inline-size: 100%;
+    max-inline-size: calc(2 * var(--max-inline-content));
 
-        & img {
-          mix-blend-mode: darken;
-          margin-inline: calc(-1 * var(--page-padding));
-          border-block-end: 1px solid currentColor;
-          inline-size: calc(100% + 2 * var(--page-padding));
-          max-inline-size: unset;
-        }
-      }
+    & > * {
+      margin-inline: -4px;
+      border-inline-start: 4px solid currentColor;
+      border-inline-end: 4px solid currentColor;
+      inline-size: calc(100% + 8px);
+    }
 
-      &_list {
-        flex: 1;
-        margin-block-start: 1rem;
+    &_back {
+      display: block;
+      margin: calc(-1 * var(--page-padding));
+      margin-block-end: 0;
+      border-block-end: 1px solid currentColor;
+      padding: calc(0.5 * var(--page-padding)) var(--page-padding);
+    }
+
+    &_contents {
+      padding: var(--page-padding);
+      & h1 {
+        margin-block: 0.1em 0.1em;
         font-weight: 700;
-        font-size: 3rem;
-        line-height: 1;
+        font-size: 4rem;
+        line-height: 0.85;
+        letter-spacing: -0.01em;
         text-transform: uppercase;
       }
+
+      & img {
+        mix-blend-mode: lighten;
+        margin-inline: calc(-1 * var(--page-padding));
+        border-block-end: 1px solid currentColor;
+        inline-size: calc(100% + 2 * var(--page-padding));
+        max-inline-size: unset;
+      }
     }
-  </style>
-</RootLayout>
+
+    &_list {
+      flex: 1;
+      counter-reset: articles;
+      margin-block: -1px;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1;
+      text-transform: uppercase;
+
+      & li {
+        &:first-child {
+          border-block-start: 1px solid currentColor;
+        }
+      }
+
+      & a {
+        display: block;
+        border-block-end: 1px solid currentColor;
+        padding: calc(0.5 * var(--page-padding)) var(--page-padding);
+        inline-size: 100%;
+
+        &::before {
+          counter-increment: articles;
+          content: counter(articles) ". ";
+        }
+
+        &:hover {
+          background-color: var(--color-hl);
+          color: var(--color-bg);
+        }
+      }
+    }
+  }
+</style>

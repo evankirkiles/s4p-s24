@@ -6,6 +6,8 @@ const webzineCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    fgColor: z.string().optional(),
+    bgColor: z.string().optional(),
   }),
 });
 

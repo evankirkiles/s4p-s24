@@ -59,9 +59,9 @@ const { disableBlurAndInstructions } = Astro.props;
 
 <style lang="scss" is:global>
   body {
-    --color-bg: #ffffff;
-    --color-fg: #e90000;
-    --color-hl: #461313;
+    --color-bg: #0800ff;
+    --color-fg: #ffffff;
+    --color-hl: #ffff00;
 
     display: flex;
     flex-direction: column;
@@ -74,9 +74,9 @@ const { disableBlurAndInstructions } = Astro.props;
   main {
     display: flex;
     flex: 1;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     margin-inline: auto;
     inline-size: 100%;
-    max-inline-size: var(--max-inline-content);
   }
 </style>

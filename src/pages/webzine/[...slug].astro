@@ -12,6 +12,9 @@ export async function getStaticPaths() {
 }
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
+const webzineEntries = await getCollection("webzine");
+const currI = webzineEntries.findIndex(({ slug }) => slug === entry.slug);
+const nextEntry = webzineEntries[currI + 1];
 const { Content } = await entry.render();
 ---
 
@@ -19,5 +22,17 @@ const { Content } = await entry.render();
   <title slot="head">❦ {entry.data.title.toUpperCase()} ❦</title>
   <ArticleLayout>
     <Content />
+    {
+      nextEntry ? (
+        <>
+          Next Entry:{" "}
+          <a href={`/webzine/${nextEntry.slug}`}>{nextEntry.data.title}</a>
+        </>
+      ) : (
+        <>
+          Back Home: <a href="/webzine">Webzine Index</a>
+        </>
+      )
+    }
   </ArticleLayout>
 </RootLayout>

@@ -5,7 +5,7 @@
 <section class="Instructions" aria-label="Instructions" id="instructions">
   <a href="/webzine" class="Instructions_return">BACK TO INDEX</a>
   <p>⏿ ⏿         ⏿ ⏿</p>
-  <p><kbd>CMD+F5</kbd>: ON/OFF</p>
+  <p><kbd>⌘+F5</kbd>: ON/OFF</p>
   <p><kbd>CAPS+U</kbd>: NAVIGATE</p>
   <p>MOVE←↑↓→MOVE</p>
   <p><kbd>CAPS+A</kbd>: READ</p>
@@ -39,13 +39,16 @@
     flex-direction: column;
     justify-content: center;
     z-index: 9999;
+    margin-inline: auto;
     inset: 0;
+    inline-size: 100%;
+    max-inline-size: calc(1.5 * var(--max-inline-content));
     overflow: scroll;
     font-weight: 700;
     font-size: clamp(0px, 10vh, 10vw);
     line-height: 1;
     letter-spacing: -0.04em;
-    text-align: center;
+    text-align: justify;
     text-decoration: underline;
     text-underline-offset: 0.1em;
 

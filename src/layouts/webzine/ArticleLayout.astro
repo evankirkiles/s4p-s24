@@ -9,12 +9,12 @@
 <style lang="scss" is:global>
   .Article {
     flex: 1;
-    margin-inline: -1px;
-    border-inline-start: 1px solid currentColor;
-    border-inline-end: 1px solid currentColor;
+    margin-inline: -4px;
+    border-inline-start: 4px solid currentColor;
+    border-inline-end: 4px solid currentColor;
     padding: var(--page-padding);
     inline-size: calc(100% + 2px);
-    max-inline-size: calc(100vw + 2px);
+    max-inline-size: min(var(--max-inline-content), calc(100vw + 2px));
     overflow-x: clip;
     overflow-wrap: break-word;
 
