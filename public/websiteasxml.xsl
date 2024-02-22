@@ -6,7 +6,10 @@
  <body> 
   <h1 align="center" style="margin-block-start: 1em; margin-block-end: -0.25em;">Software For People 2024</h1> 
   <p style="max-width: 66ch; margin-inline: auto; text-align: center;"><a href="/">← Back Home</a></p>
-  <p align="center" style="max-width: 66ch; margin-inline: auto;">This site delivers no HTML document. The HTML is entirely generated from (a) an XML file listing all of the students in the class, and (b) an XLST file that templates how the HTML DOM should be generated from the XML file itself (though, to be fair, this is basically a flavor of HTML). XLST is a templating language—it supports for-each loops backed by the basic XML file natively, something you'd generally have to use JavaScript for. I find this kind of cool.</p>
+  <p align="center" style="max-width: 66ch; margin-inline: auto;">This site delivers no HTML document. The HTML is entirely generated from (a) an XML file listing all of the students in the class, and (b) an XLST file that templates how the HTML DOM should be generated from the XML file itself (though, to be fair, this is basically a flavor of HTML). XLST is a templating language—it supports for-each loops backed by the basic XML file natively, something you'd generally have to use JavaScript for. I find this interesting.</p>
+  <p align="center" style="max-width: 66ch; margin-inline: auto;">
+    To see the XSL file that generated this page, click <a href="/websiteasxml.xsl">here</a>. To see the XML file containing this page's data, open the Network pane of your web inspector.
+  </p>
    <table border="3" align="center" style="margin-block: 2em;" > 
    <tr> 
     <th></th>
