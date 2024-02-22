@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/xsl" href="/websiteasxml.xsl" ?> 
+<student> 
+<s> 
+  <name>Hongting Zhu</name> 
+  <favicon>images/favcon.png</favicon>
+  <website>https://iviaaa.github.io/Interactive-2024/</website> 
+</s> 
+<s> 
+  <name>Cierra Peters</name> 
+</s> 
+<s> 
+  <name>Gaby N. Báez</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://gabriellanbaez.github.io/interactive-2024/</website> 
+</s>
+<s> 
+  <name>Christopher Cole</name> 
+</s> 
+<s> 
+  <name>Hasti Kasrei Roudbore</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://hastikasraei.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Xiwen Zhang</name> 
+</s> 
+<s> 
+  <name>Gabby Uy</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://gabby-uy.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Cleo Maloney</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://cleo-maloney.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Richard Corrente</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://exzozbta.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Alana Liu</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://hongyingaliu.github.io/interactive-2024/</website> 
+</s> 
+<s> 
+  <name>Malia Kuo</name> 
+  <favicon>images/heart.png</favicon>
+  <website>https://maliakuo-interactive2024.netlify.app/</website> 
+</s> 
+<s> 
+  <name>Evan Kirkiles</name> 
+  <favicon>favicon-32x32.png</favicon>
+  <website>https://s-for-p.evankirkiles.com/</website> 
+</s> 
+<s> 
+  <name>Uri Teague</name> 
+  <website>https://uriteague.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Karen Lin</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://klin2020.github.io/interactive-2024/</website> 
+</s> 
+<s> 
+  <name>Philomena Wu</name> 
+  <favicon>images/icon.png</favicon>
+  <website>https://philomenawu.github.io/interactive/</website> 
+</s> 
+<s> 
+  <name>Jaamal Benjamin</name>
+</s> 
+</student> 
