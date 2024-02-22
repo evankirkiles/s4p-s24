@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout themeColor="#000000">
+  <a href="/">← Back Home</a>
   <svg
     viewBox="0 0 250 250"
     preserveAspectRatio="xMidYMid slice"
@@ -53,7 +54,16 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   body {
     --color-bg: #000000;
     --color-fg: #ffffff;
+    --color-hl: yellow;
     overflow: clip;
+    font-family: Times New Roman;
+  }
+
+  a {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    color: white;
   }
 
   svg {
