@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <?xml-stylesheet type="text/xsl" href="/websiteasxml.xsl" ?> 
-<student> 
+<person> 
+<t>
+  <name>Rosa McElheny</name> 
+  <favicon>icon.png</favicon>
+  <website>https://rosamcelheny.com/</website> 
+</t>
 <s> 
   <name>Hongting Zhu</name> 
   <favicon>images/favcon.png</favicon>
@@ -72,4 +77,4 @@
 <s> 
   <name>Jaamal Benjamin</name>
 </s> 
-</student> 
+</person> 
