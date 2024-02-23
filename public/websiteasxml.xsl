@@ -7,10 +7,11 @@
   <xsl:param name="website" />
   <xsl:param name="favicon" />
   <tr> 
-    <td style="text-align: center;"><img style="width: 1em; height: 1em; display: inline-block; margin-inline: auto;">
-      <xsl:attribute name="src">
-        <xsl:value-of select="concat($website, $favicon)" />
-      </xsl:attribute>
+    <td style="text-align: center;">
+      <img width="20px" height="20px" style="width: 1em; height: 1em; display: inline-block; margin-inline: auto;">
+        <xsl:attribute name="src">
+          <xsl:value-of select="concat($website, $favicon)" />
+        </xsl:attribute>
       </img>
     </td>
     <td><xsl:value-of select="$name"/></td> 
