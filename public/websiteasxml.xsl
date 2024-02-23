@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <xsl:stylesheet version="1.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> 
+
+<xsl:template name="person">
+  <xsl:param name="name" />
+  <xsl:param name="website" />
+  <xsl:param name="favicon" />
+  <tr> 
+    <td style="text-align: center;"><img style="width: 1em; height: 1em; display: inline-block; margin-inline: auto;">
+      <xsl:attribute name="src">
+        <xsl:value-of select="concat($website, $favicon)" />
+      </xsl:attribute>
+      </img>
+    </td>
+    <td><xsl:value-of select="$name"/></td> 
+    <td>
+      <a target="_blank">
+        <xsl:attribute name="href">
+          <xsl:value-of select="$website"/>
+        </xsl:attribute>
+        <xsl:value-of select="$website"/>
+      </a>
+    </td> 
+  </tr> 
+</xsl:template>
+
+
 <xsl:template match="/"> 
  <html>
  <body> 
@@ -25,23 +50,11 @@
         </th>
       </tr>
       <xsl:for-each select="person/t"> 
-        <tr> 
-          <td style="text-align: center;"><img style="width: 1em; height: 1em; display: inline-block; margin-inline: auto;">
-            <xsl:attribute name="src">
-              <xsl:value-of select="concat(website, favicon)" />
-            </xsl:attribute>
-            </img>
-          </td>
-          <td><xsl:value-of select="name"/></td> 
-          <td>
-            <a target="_blank">
-              <xsl:attribute name="href">
-                <xsl:value-of select="website"/>
-              </xsl:attribute>
-              <xsl:value-of select="website"/>
-            </a>
-          </td> 
-        </tr> 
+        <xsl:call-template name="person">
+          <xsl:with-param name="name"><xsl:value-of select="name"/></xsl:with-param>
+          <xsl:with-param name="website"><xsl:value-of select="website"/></xsl:with-param>
+          <xsl:with-param name="favicon"><xsl:value-of select="favicon"/></xsl:with-param>
+        </xsl:call-template>
       </xsl:for-each>
       <tr>
         <th colspan="3">
@@ -49,23 +62,11 @@
         </th>
       </tr>
       <xsl:for-each select="person/s"> 
-        <tr> 
-          <td style="text-align: center;"><img style="width: 1em; height: 1em; display: inline-block; margin-inline: auto;">
-            <xsl:attribute name="src">
-              <xsl:value-of select="concat(website, favicon)" />
-            </xsl:attribute>
-            </img>
-          </td>
-          <td><xsl:value-of select="name"/></td> 
-          <td>
-            <a target="_blank">
-              <xsl:attribute name="href">
-                <xsl:value-of select="website"/>
-              </xsl:attribute>
-              <xsl:value-of select="website"/>
-            </a>
-          </td> 
-        </tr> 
+        <xsl:call-template name="person">
+          <xsl:with-param name="name"><xsl:value-of select="name"/></xsl:with-param>
+          <xsl:with-param name="website"><xsl:value-of select="website"/></xsl:with-param>
+          <xsl:with-param name="favicon"><xsl:value-of select="favicon"/></xsl:with-param>
+        </xsl:call-template>
       </xsl:for-each> 
     </tbody>
     </table>
