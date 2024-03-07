@@ -15,24 +15,85 @@ const webzineEntries = await getCollection("webzine");
       <Image src={Design2} alt="An interview of " />
       <h1>THE IMPORTANCE OF SPOKEN WEB</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Fermentum leo vel
-        orci porta non pulvinar neque laoreet suspendisse. Vestibulum lorem sed
-        risus ultricies tristique nulla aliquet enim tortor. Tincidunt nunc
-        pulvinar sapien et ligula ullamcorper malesuada. Neque sodales ut etiam
-        sit amet nisl purus in mollis. Quisque egestas diam in arcu cursus.
-        Fames ac turpis egestas sed tempus urna. Pharetra pharetra massa massa
-        ultricies mi quis hendrerit dolor. Sit amet nulla facilisi morbi tempus
-        iaculis urna.
-      </p><p>
-        Turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet. Libero id
-        faucibus nisl tincidunt eget. Felis eget velit aliquet sagittis. Posuere
-        urna nec tincidunt praesent. Nec dui nunc mattis enim ut. Tristique
-        risus nec feugiat in fermentum posuere urna. Et tortor consequat id
-        porta. Nam at lectus urna duis convallis.
+        This situated webzine aims to explore the importance of oral tradition,
+        a medium lost in the era of written word and digital media. For the
+        majority of human history, speech and body language have been the
+        singular means of communication. It was only with the invention of
+        cuneiform about 5,000 years ago where textual information began to be
+        able to be recorded and live outside of memories and conversations. The
+        articles selected here are meant to explore the importance of spoken
+        word across cultures, from applications in genealogy to storytelling.
+      </p>
+      <p>
+        Uniquely, the webzine itself prioritizes spoken word over written text,
+        running counter to the visual-first nature of digital technology. In an
+        effort to bring attention to alternative, accessible modes of navigation
+        on the web, the webzine's articles are designed to be navigated by
+        screen reader <i>only</i>, and are optimized for screen readers and
+        other assistive technologies. The article contents are blurred for
+        sighted readers.
+      </p>
+      <h2>On Screenreaders</h2>
+      <p>
+        It is recommended to familiarize yourself with your platform's
+        screenreader before entering the articles. On Mac devices, VoiceOver can
+        be toggled on and off with <kbd>⌘+F5</kbd>. The main navigation can be
+        activated with <kbd>CAPS+U</kbd> (yes, the caps lock button), and has several
+        panes for different modes of navigating a page—recommended is to use the
+        "Headings" pane.
+      </p>
+      <p>
+        To read an article, it is generally enough across the web to open the
+        "Headings" navigation pane, focus the `h1` element (navigating to it
+        with arrow keys and pressing ENTER), and begin reading using <kbd
+          >CAPS+A</kbd
+        >. Now would be a great time to do this—see if you can read "The
+        Importance of Spoken Web" in this page.
+      </p>
+      <p>Some additional controls to be aware of:</p>
+      <ul>
+        <li>
+          <kbd>CAPS+SHIFT+&#123;←,→&#125;</kbd> to move within a level in the document
+          tree
+        </li>
+        <li>
+          <kbd>CAPS+SHIFT+&#123;↑,↓&#125;</kbd> to move up/down a level in the document
+          tree
+        </li>
+        <li>
+          <kbd>CAPS+SPACE</kbd> to interact with a button or link
+        </li>
+        <li>
+          <kbd>CAPS+H</kbd> to read the current line
+        </li>
+        <li>
+          <kbd>CAPS+L</kbd> to read the current paragraph
+        </li>
+        <li>
+          <kbd>CAPS+R</kbd> to read the current word
+        </li>
+      </ul>
+      <p>
+        Our goal here is to increase awareness into alternative modes of
+        navigation across the internet in an informative, engaging manner.
+      </p>
+      <h2>On "Reader Modes"</h2>
+      <p>
+        One caveat to this webzine is that, despite our enforced restrictions,
+        all content is made available to sighted users through browser "reader
+        modes"—simplified, pared-down, unstyled versions of webpages available
+        when a website is sufficiently machine-readable and looks enough like an
+        article.
+      </p>
+      <p>
+        Rather than garble the HTML of the articles to break "reader mode", I
+        have chosen to let this be an example into the benefits of semantic,
+        accessible HTML. Not only are content semantics accessible, they are
+        machine-readable and often lead to improved SEO and user experience in
+        ways that are not immediately obvious.
       </p>
     </div>
-    <ul class="Home_list">
+    <ol class="Home_list">
       {
         webzineEntries.map((entry) => (
           <li>
@@ -40,14 +101,7 @@ const webzineEntries = await getCollection("webzine");
           </li>
         ))
       }
-      {
-        webzineEntries.map((entry) => (
-          <li>
-            <a href={`/webzine/${entry.slug}`}>{entry.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    </ol>
   </article>
 </RootLayout>
 
@@ -61,17 +115,17 @@ const webzineEntries = await getCollection("webzine");
       minmax(min(100vw, calc(0.75 * var(--max-inline-content) - 2px)), 1fr)
     );
     flex: 1;
-    gap: 4px;
+    gap: 1px;
     // filter: blur(10px);
     transition: filter 0.1s ease-in-out;
     inline-size: 100%;
     max-inline-size: calc(2 * var(--max-inline-content));
 
     & > * {
-      margin-inline: -4px;
-      border-inline-start: 4px solid currentColor;
-      border-inline-end: 4px solid currentColor;
-      inline-size: calc(100% + 8px);
+      margin-inline: -1px;
+      border-inline-start: 1px solid currentColor;
+      border-inline-end: 1px solid currentColor;
+      inline-size: calc(100% + 2px);
     }
 
     &_back {
@@ -93,12 +147,21 @@ const webzineEntries = await getCollection("webzine");
         text-transform: uppercase;
       }
 
+      & h2 {
+        margin-block-start: 1em;
+        font-weight: 700;
+      }
+
       & img {
         mix-blend-mode: lighten;
         margin-inline: calc(-1 * var(--page-padding));
         border-block-end: 1px solid currentColor;
         inline-size: calc(100% + 2 * var(--page-padding));
         max-inline-size: unset;
+      }
+
+      & p {
+        margin-block: 0.5em;
       }
     }
 

@@ -4,26 +4,26 @@
 
 <section class="Instructions" aria-label="Instructions" id="instructions">
   <a href="/webzine" class="Instructions_return">BACK TO INDEX</a>
-  <p>⏿ ⏿         ⏿ ⏿</p>
+  <p>⏿ ⏿ ⏿ ⏿ ⏿ ⏿</p>
   <p><kbd>⌘+F5</kbd>: ON/OFF</p>
+  <p>←↑↓→: MOVE</p>
   <p><kbd>CAPS+U</kbd>: NAVIGATE</p>
-  <p>MOVE←↑↓→MOVE</p>
   <p><kbd>CAPS+A</kbd>: READ</p>
   <p>
     <a
       href="https://www.apple.com/voiceover/info/guide/_1121.html"
       target="_blank"
-      rel="noopener noreferrer">VOICEOVER</a
+      rel="noopener noreferrer">VOICEOVER INFO</a
     >
   </p>
   <p>
     <a
       href="https://www.w3.org/WAI/standards-guidelines/wcag/"
       target="_blank"
-      rel="noopener noreferrer">WCAG</a
+      rel="noopener noreferrer">WCAG STANDARDS</a
     >
   </p>
-  <p>⏿</p>
+  <p>⏿ ⏿ ⏿ ⏿ ⏿ ⏿</p>
   <a
     class="Instructions_more"
     href="https://support.apple.com/guide/voiceover/general-commands-cpvokys01/mac"
@@ -41,8 +41,9 @@
     z-index: 9999;
     margin-inline: auto;
     inset: 0;
+    padding-inline: var(--page-padding);
     inline-size: 100%;
-    max-inline-size: calc(1.5 * var(--max-inline-content));
+    max-inline-size: calc(1.75 * var(--max-inline-content));
     overflow: scroll;
     font-weight: 700;
     font-size: clamp(0px, 10vh, 10vw);
@@ -69,5 +70,9 @@
       bottom: unset;
       padding-block: 0.75em;
     }
+
+    // & p {
+    //   text-align-last: justify;
+    // }
   }
 </style>
