@@ -39,22 +39,24 @@ const { disableBlurAndInstructions } = Astro.props;
 <script>
   const maincontent = document.getElementById("maincontent");
   const instructions = document.getElementById("instructions")!;
-  // var element = new Image();
-  // element.name = "BAD ACTRESS DETECTED. INSTALLING MALWARE...";
-  // var devtoolsOpen = false;
-  // // @ts-ignore
-  // element.__defineGetter__("id", function () {
-  //   devtoolsOpen = true; // This only executes when devtools is open.
-  // });
-  // setInterval(function () {
-  //   devtoolsOpen = false;
-  //   console.log(element);
-  //   if (devtoolsOpen) {
-  //     maincontent?.remove();
-  //     instructions.innerHTML =
-  //       "NO CHEATING<br/>NO CHEATING<br/>NO CHEATING<br/>NO CHEATING<br/>NO CHEATING<br/>";
-  //   }
-  // }, 250);
+  var element = new Image();
+  element.name = "BAD ACTRESS DETECTED. INSTALLING MALWARE...";
+  var devtoolsOpen = false;
+  // @ts-ignore
+  element.__defineGetter__("id", function () {
+    devtoolsOpen = true; // This only executes when devtools is open.
+  });
+  let intervalId = setInterval(function () {
+    console.log(element);
+    if (devtoolsOpen) {
+      if (!window.localStorage.getItem("allow-inspect")) {
+        maincontent?.remove();
+        instructions.innerHTML =
+          "invalid access pattern.<br/>invalid access pattern.<br/>invalid access pattern.<br/>invalid access pattern.<br/>invalid access pattern.<br/>";
+      }
+      clearInterval(intervalId);
+    }
+  }, 250);
 </script>
 
 <style lang="scss" is:global>
